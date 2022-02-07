@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JPG to PNG</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      text-align: center;
+      background-color: #EBFFD6;
+    }
+    .form-control {
+      margin-top: 90px;
+      margin-bottom: 70px;
+    }
+    section.convertor {
+      color: #000000;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #AFAFAF;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+      outline: none;
+      border: none;
+      padding: 10px;
+      resize: none;
+      font-family: verdana, Arial, Helvetica, sans-serif
+      
+    }
+    h1 {
+         font-style: bold;
+         font-family: cursive;
+         font-size: 80px
+    }
+    p {
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         font-size: 20px}
+     div.Tr {
+       text-align: left;
+       justify-items: center;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     footer {
+       text-align: center;
+       font-family: cursive;
+     }
+    
+    </style>
+</head>
+<body>
+  <h1>IMG Convertor</h1>
+  <p>How to convert ?</p>
+  <div class="Tr">1. Click on "Choose File."<br>
+     2. Select an .jpg file.<br>
+     3. image convertor will automaticaly convert your .jpg file to .png file<br>
+     4. your image file will auto downloaded to your phone's download folder.</div>
+     <br>
+  <form>
+  
+  <section class="convertor">
+    
+    <div class="form-control">
+      <label>&nbsp;&nbsp;Click on choose file</label>
+      <input type="file" name="image" />
+      <script src="script.js"></script>
+      <script>
+      	  
+  const imageFileEl = document.querySelector('[name="image"]');
+  
+
+  imageFileEl.addEventListener('change', (event) => {
+    const jpgImageFileBlob = event.currentTarget.files[0];
+
+  
+    if (jpgImageFileBlob.type.match(/image\/jpe?g/i) !== null) {
+      JpgToPngConvertor(jpgImageFileBlob).process();
+    } else {
+      alert('Invalid JPG image file');
+    }
+  }, false);
+      	</script>
+      	
+    </div>
+  
+  </section>
+  </form>
+  <br>
+  <br>
+  <br><br><br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
+    <br>  <br>  <br>  <hr>
+  <footer>&copy;Debojit 2022</footer>
+</body>
+</html>
